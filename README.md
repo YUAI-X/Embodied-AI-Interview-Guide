@@ -3,7 +3,7 @@
 > 面向具身智能、机器人与 Physical AI 岗位的一站式中文求职资料库：持续整理招聘信息、真实面经高频题、精炼答案与工程实践要点。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/YUAI-X/https-github.com-new-name-Embodied-AI-Interview-Guide/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/YUAI-X/Embodied-AI-Interview-Guide/pulls)
 
 ## 快速入口
 
@@ -69,7 +69,7 @@
 
 ## 贡献
 
-欢迎通过 [Issue](https://github.com/YUAI-X/https-github.com-new-name-Embodied-AI-Interview-Guide/issues) 或 [Pull Request](https://github.com/YUAI-X/https-github.com-new-name-Embodied-AI-Interview-Guide/pulls) 贡献：
+欢迎通过 [Issue](https://github.com/YUAI-X/Embodied-AI-Interview-Guide/issues) 或 [Pull Request](https://github.com/YUAI-X/Embodied-AI-Interview-Guide/pulls) 贡献：
 
 - 新的公开招聘信息或失效链接反馈；
 - 有公开来源的真实面试题；
