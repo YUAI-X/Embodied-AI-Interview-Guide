@@ -32,6 +32,7 @@ $rows = foreach ($row in $response.data.data) {
         Link = Escape-MarkdownCell $row[5]
     }
 }
+$rows = @($rows | Sort-Object -Property @{ Expression = { $_.Date }; Descending = $true }, @{ Expression = { $_.Title }; Descending = $false })
 
 $lines = [System.Collections.Generic.List[string]]::new()
 $lines.Add("# 具身智能招聘信息")
