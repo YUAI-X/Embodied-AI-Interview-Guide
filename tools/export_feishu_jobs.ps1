@@ -43,9 +43,38 @@ $lines.Add("")
 $lines.Add("共 **$($rows.Count)** 条有效记录。")
 $lines.Add("")
 $tableLines = [System.Collections.Generic.List[string]]::new()
-$tableLines.Add("| 招聘标题 | 类型 | 岗位方向 | 工作地点 | 发布日期 | 原文 |")
-$tableLines.Add("| --- | --- | --- | --- | --- | --- |")
-foreach ($row in $rows) { $tableLines.Add("| $($row.Title) | $($row.Type) | $($row.Direction) | $($row.Location) | $($row.Date) | $($row.Link) |") }
+$tableLines.Add("| 招聘标题 | 类型 | 岗位方向 | 工作地点 | 发布日期 |")
+$tableLines.Add("| --- | --- | --- | --- | --- |")
+foreach ($row in $rows) {
+    $linkTarget = if ($row.Link -match '^\[[^\]]*\]\((.+)\)
+$lines.AddRange($tableLines)
+
+$destination = Join-Path $repoRoot $OutputPath
+New-Item -ItemType Directory -Force -Path (Split-Path -Parent $destination) | Out-Null
+[System.IO.File]::WriteAllLines($destination, $lines, [System.Text.UTF8Encoding]::new($false))
+
+$readmePath = Join-Path $repoRoot "README.md"
+$readmeText = [System.IO.File]::ReadAllText($readmePath, [System.Text.Encoding]::UTF8)
+$startMarker = "<!-- JOBS_TABLE_START -->"
+$endMarker = "<!-- JOBS_TABLE_END -->"
+$readmeTable = @(
+    $startMarker,
+    "",
+    "> 共 **$($rows.Count)** 条有效记录，按发布日期从新到旧排列。招聘信息具有时效性，请以原始链接为准。",
+    "",
+    "[**在独立页面查看求职信息 →**](https://github.com/YUAI-X/Embodied-AI-Interview-Guide/blob/master/data/jobs.md)",
+    ""
+) + $tableLines + @("", $endMarker)
+$markerPattern = "(?s)" + [regex]::Escape($startMarker) + ".*?" + [regex]::Escape($endMarker)
+if (-not [regex]::IsMatch($readmeText, $markerPattern)) { throw "README.md 中缺少求职信息同步标记。" }
+$updatedReadme = [regex]::Replace($readmeText, $markerPattern, ($readmeTable -join "`r`n"), 1)
+[System.IO.File]::WriteAllText($readmePath, $updatedReadme, [System.Text.UTF8Encoding]::new($false))
+
+Write-Output "已导出 $($rows.Count) 条记录到 $destination，并同步更新 README.md"
+) { $Matches[1] } else { $row.Link }
+    $linkedTitle = if ([string]::IsNullOrWhiteSpace($linkTarget)) { $row.Title } else { "[$($row.Title)]($linkTarget)" }
+    $tableLines.Add("| $linkedTitle | $($row.Type) | $($row.Direction) | $($row.Location) | $($row.Date) |")
+}
 $lines.AddRange($tableLines)
 
 $destination = Join-Path $repoRoot $OutputPath
