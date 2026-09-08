@@ -46,7 +46,12 @@ $tableLines = [System.Collections.Generic.List[string]]::new()
 $tableLines.Add("| 招聘标题 | 类型 | 岗位方向 | 工作地点 | 发布日期 |")
 $tableLines.Add("| --- | --- | --- | --- | --- |")
 foreach ($row in $rows) {
-    $linkTarget = if ($row.Link -match '^\[[^\]]*\]\((.+)\)
+    $linkTarget = $row.Link
+    $linkMatch = [regex]::Match($linkTarget, "^\[[^\]]*\]\((.+)\)$")
+    if ($linkMatch.Success) { $linkTarget = $linkMatch.Groups[1].Value }
+    $linkedTitle = if ([string]::IsNullOrWhiteSpace($linkTarget)) { $row.Title } else { "[$($row.Title)]($linkTarget)" }
+    $tableLines.Add("| $linkedTitle | $($row.Type) | $($row.Direction) | $($row.Location) | $($row.Date) |")
+}
 $lines.AddRange($tableLines)
 
 $destination = Join-Path $repoRoot $OutputPath
