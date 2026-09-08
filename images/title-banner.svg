@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="210" viewBox="0 0 1200 210" role="img" aria-labelledby="title desc">
+  <title id="title">具身智能求职与面经题库</title>
+  <desc id="desc">面向具身智能、机器人与 Physical AI 岗位的一站式中文求职资料库</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="52%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="210" rx="28" fill="url(#bg)"/>
+  <circle cx="72" cy="48" r="5" fill="#38bdf8" opacity=".8"/>
+  <circle cx="1128" cy="162" r="7" fill="#c084fc" opacity=".75"/>
+  <rect x="54" y="42" width="1092" height="126" rx="24" fill="none" stroke="url(#accent)" stroke-width="2" opacity=".55"/>
+  <text x="600" y="126" text-anchor="middle" fill="#ffffff" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif" font-size="66" font-weight="800" letter-spacing="2">🤖 具身智能求职与面经题库 🚀</text>
+</svg>
