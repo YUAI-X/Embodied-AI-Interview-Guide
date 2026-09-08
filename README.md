@@ -1,4 +1,4 @@
-<h1 align="center">具身智能求职与面经</h1>
+<h1 align="center">具身智能求职与面经题库</h1>
 
 <p align="center">面向具身智能、机器人与 Physical AI 岗位的一站式中文求职资料库</p>
 
