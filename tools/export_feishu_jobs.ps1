@@ -35,22 +35,22 @@ $rows = foreach ($row in $response.data.data) {
 $rows = @($rows | Sort-Object -Property @{ Expression = { $_.Date }; Descending = $true }, @{ Expression = { $_.Title }; Descending = $false })
 
 $lines = [System.Collections.Generic.List[string]]::new()
-$lines.Add("# 具身智能招聘信息")
+$lines.Add("<h1 align=`"center`">💼 具身智能招聘信息</h1>")
 $lines.Add("")
 $lines.Add("> 数据源：飞书多维表格「每日招聘汇总」；导出日期：$(Get-Date -Format 'yyyy-MM-dd')。招聘信息具有时效性，请以原始链接为准。")
 $lines.Add("> 本文件不包含飞书中的「社群」表信息。")
 $lines.Add("")
-$lines.Add("共 **$($rows.Count)** 条有效记录。")
+$lines.Add("<p align=`"center`"><strong>🔥 共 $($rows.Count) 条有效记录 · 按发布日期持续更新</strong></p>")
 $lines.Add("")
 $tableLines = [System.Collections.Generic.List[string]]::new()
-$tableLines.Add("| 发布日期 | 招聘标题 | 类型 | 岗位方向 | 工作地点 |")
+$tableLines.Add("| 📅 发布日期 | 🏢 招聘信息 | 🎯 类型 | 🤖 岗位方向 | 📍 工作地点 |")
 $tableLines.Add("| --- | --- | --- | --- | --- |")
 foreach ($row in $rows) {
     $linkTarget = $row.Link
     $linkMatch = [regex]::Match($linkTarget, "^\[[^\]]*\]\((.+)\)$")
     if ($linkMatch.Success) { $linkTarget = $linkMatch.Groups[1].Value }
-    $linkedTitle = if ([string]::IsNullOrWhiteSpace($linkTarget)) { $row.Title } else { "[$($row.Title)]($linkTarget)" }
-    $tableLines.Add("| $($row.Date) | $linkedTitle | $($row.Type) | $($row.Direction) | $($row.Location) |")
+    $linkedTitle = if ([string]::IsNullOrWhiteSpace($linkTarget)) { "**$($row.Title)**" } else { "[**$($row.Title)**]($linkTarget)" }
+    $tableLines.Add("| **$($row.Date)** | $linkedTitle | $($row.Type) | $($row.Direction) | $($row.Location) |")
 }
 $lines.AddRange($tableLines)
 
@@ -65,9 +65,9 @@ $endMarker = "<!-- JOBS_TABLE_END -->"
 $readmeTable = @(
     $startMarker,
     "",
-    "> 共 **$($rows.Count)** 条有效记录，按发布日期从新到旧排列。招聘信息具有时效性，请以原始链接为准。",
+    "<p align=`"center`"><strong>🔥 已收录 $($rows.Count) 条岗位信息 · 按发布日期持续更新</strong></p>",
     "",
-    "[**在独立页面查看求职信息 →**](https://github.com/YUAI-X/Embodied-AI-Interview-Guide/blob/master/data/jobs.md)",
+    "<p align=`"center`"><a href=`"https://github.com/YUAI-X/Embodied-AI-Interview-Guide/blob/master/data/jobs.md`"><strong>查看完整求职信息 →</strong></a></p>",
     ""
 ) + $tableLines + @("", $endMarker)
 $markerPattern = "(?s)" + [regex]::Escape($startMarker) + ".*?" + [regex]::Escape($endMarker)
