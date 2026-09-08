@@ -1,12 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="140" viewBox="0 0 1200 140" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" role="img" aria-labelledby="title">
   <title id="title">具身智能求职与面经题库</title>
-  <desc id="desc">面向具身智能、机器人与 Physical AI 岗位的一站式中文求职资料库</desc>
-  <defs>
-    <linearGradient id="titleGradient" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#0969da"/>
-      <stop offset="50%" stop-color="#6366f1"/>
-      <stop offset="100%" stop-color="#8250df"/>
-    </linearGradient>
-  </defs>
-  <text x="600" y="96" text-anchor="middle" fill="url(#titleGradient)" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif" font-size="66" font-weight="800" letter-spacing="2">🤖 具身智能求职与面经题库 🚀</text>
+  <text x="600" y="82" text-anchor="middle" fill="#1f2328" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif" font-size="66" font-weight="800">🤖 具身智能求职与面经题库 🚀</text>
 </svg>
