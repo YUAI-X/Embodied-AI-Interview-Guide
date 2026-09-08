@@ -43,14 +43,14 @@ $lines.Add("")
 $lines.Add("共 **$($rows.Count)** 条有效记录。")
 $lines.Add("")
 $tableLines = [System.Collections.Generic.List[string]]::new()
-$tableLines.Add("| 招聘标题 | 类型 | 岗位方向 | 工作地点 | 发布日期 |")
+$tableLines.Add("| 发布日期 | 招聘标题 | 类型 | 岗位方向 | 工作地点 |")
 $tableLines.Add("| --- | --- | --- | --- | --- |")
 foreach ($row in $rows) {
     $linkTarget = $row.Link
     $linkMatch = [regex]::Match($linkTarget, "^\[[^\]]*\]\((.+)\)$")
     if ($linkMatch.Success) { $linkTarget = $linkMatch.Groups[1].Value }
     $linkedTitle = if ([string]::IsNullOrWhiteSpace($linkTarget)) { $row.Title } else { "[$($row.Title)]($linkTarget)" }
-    $tableLines.Add("| $linkedTitle | $($row.Type) | $($row.Direction) | $($row.Location) | $($row.Date) |")
+    $tableLines.Add("| $($row.Date) | $linkedTitle | $($row.Type) | $($row.Direction) | $($row.Location) |")
 }
 $lines.AddRange($tableLines)
 
