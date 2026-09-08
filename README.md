@@ -1,4 +1,6 @@
-<h1 align="center">🤖 具身智能求职与面经题库 🚀</h1>
+<p align="center">
+  <img src="images/title-banner.svg" width="100%" alt="🤖 具身智能求职与面经题库 🚀">
+</p>
 
 <h3 align="center">面向具身智能、机器人与 Physical AI 岗位的一站式中文求职资料库</h3>
 
