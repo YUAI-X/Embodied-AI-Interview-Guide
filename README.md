@@ -1,30 +1,32 @@
-<h1 align="center">具身智能求职与面经题库</h1>
+<h1 align="center">🤖 具身智能求职与面经题库 🚀</h1>
 
-<p align="center">面向具身智能、机器人与 Physical AI 岗位的一站式中文求职资料库</p>
+<h3 align="center">面向具身智能、机器人与 Physical AI 岗位的一站式中文求职资料库</h3>
 
-<p align="center">
-  <a href="https://winstonjq.github.io/embodied-interview-qa/"><strong>在线刷题</strong></a> ·
-  <a href="https://github.com/YUAI-X/Embodied-AI-Interview-Guide/blob/master/data/jobs.md"><strong>求职信息</strong></a> ·
-  <a href="https://github.com/YUAI-X/Embodied-AI-Interview-Guide/issues"><strong>参与贡献</strong></a>
-</p>
+<h3 align="center">
+  <a href="https://winstonjq.github.io/embodied-interview-qa/">🔥 在线刷题</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/YUAI-X/Embodied-AI-Interview-Guide/blob/master/data/jobs.md">💼 求职信息</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/YUAI-X/Embodied-AI-Interview-Guide/issues">🤝 参与贡献</a>
+</h3>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
   <a href="https://github.com/YUAI-X/Embodied-AI-Interview-Guide/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
 </p>
 
-## 面经刷题
+<h1 align="center">📚 面经刷题</h1>
 
-<p align="center">
-  <a href="https://winstonjq.github.io/embodied-interview-qa/"><strong>打开在线面经题库 →</strong></a>
-</p>
+<h2 align="center">
+  <a href="https://winstonjq.github.io/embodied-interview-qa/">🔥 打开在线面经题库 →</a>
+</h2>
 
 <table align="center">
   <tr>
-    <td align="center"><strong>8</strong><br>专题卷</td>
-    <td align="center"><strong>425</strong><br>面经题</td>
-    <td align="center"><strong>54</strong><br>手撕代码题</td>
-    <td align="center"><strong>≈19</strong><br>低频备选题</td>
+    <td align="center"><h2>8</h2><strong>专题卷</strong></td>
+    <td align="center"><h2>425</h2><strong>面经题</strong></td>
+    <td align="center"><h2>54</h2><strong>手撕代码题</strong></td>
+    <td align="center"><h2>≈19</h2><strong>低频备选题</strong></td>
   </tr>
 </table>
 
